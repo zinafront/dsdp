@@ -308,7 +308,7 @@ body.dashboard {
   body.dashboard header nav.navigator {
     background: none; }
   body.dashboard .content {
-    height: 90vh;
+    height: 95vh;
     margin: 0 auto;
     overflow: hidden; }
     body.dashboard .content .filters-big-box {
@@ -325,15 +325,17 @@ body.dashboard {
 .content {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: stretch;
   overflow: auto; }
+  @media screen and (max-width: 767px) {
+    .content {
+      justify-content: flex-start; } }
   .content .filters-big-box {
     background: #f2f2f2;
     border-radius: 5px;
     border: 1px solid #e6e6e6;
-    padding: 1em;
-    margin-top: 2rem; }
+    padding: 1em; }
     .content .filters-big-box .filter-trigger {
       color: #333333;
       text-decoration: none; }
