@@ -1,0 +1,148 @@
+body {
+  &.dashboard {
+    &:before {
+      opacity: 1;
+    }
+    position: relative;
+    .breadcrumb {
+      color: $white;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      a {
+        color: $white;
+      }
+      #current-results {
+        display: none;
+      }
+      #current-home {
+        display: initial;
+      }
+    }
+    header {
+      nav {
+        &.navigator {
+          background: none;
+        }
+      }
+    }
+    .content {
+      height: 90vh;
+      margin: 0 auto;
+      overflow: hidden;
+      .filters-big-box {
+        background: rgba(20,20,20,0.85);
+        border: none;
+        color: $white;
+      }
+      .card-group.home {
+        display: none;
+      }
+      .all-projects {
+        display: none;
+      }
+    }
+    .filter-trigger {
+      display: none;
+    }
+  }
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  overflow: auto;
+  .filters-big-box {
+    background: $gray-contents;
+    border-radius: 5px;
+    border: 1px solid $gray-borders;
+    padding: 1em;
+    .filter-trigger {
+      color: $black;
+      text-decoration: none;
+      h3 {
+        position: relative;
+        &:after {
+          content:'\f078'; //fas fa-chevron-up
+          font-family: "Font Awesome 5 Free"; 
+          font-weight: 900; 
+          position: absolute;
+          font-size: 1rem;
+          top:5px;
+          right:0;
+        }
+      }
+      &.home {
+        @media screen and (min-width:768px) {
+          display: none;
+        }
+      }
+      &.active {
+        h3 {
+          &:after {
+            content:'\f077'; //fas fa-chevron-down
+          }
+        }
+      }
+    }
+    #bigForm {
+      div[class*="col-"] {
+        margin: 0.6rem 0;
+      }
+      .process {
+        float: right;
+      }
+    }
+  }
+  .all-projects {
+    .card-group.home {
+      margin-top: 2rem;
+      display: flex;
+      @media screen and (max-width:580px) {
+        flex-direction: column;
+      }
+      h3 {
+        margin-bottom: 2rem;
+      }
+      .card {
+        border: 1px solid $gray-borders;
+        border-radius: 5px;
+        display: flex;
+        margin: 1em 0;
+        flex-direction: column;
+        padding: 0.6em 1em;
+        hgroup {
+          h4 {
+            font-size: 1.2rem;
+            color: $nk-blue;
+            margin-bottom:5px;
+          }
+          h5 {
+            font-size: 0.9rem;
+            color: $black;
+          }
+        }
+        .card-matches {
+          color: $nk-blue;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          justify-content: flex-end;
+          font-size: 0.9em;
+          flex-shrink:0;
+          figure {
+            width: 1.4em;
+            margin:0;
+            img {
+              width:100%;
+            }
+          }
+          @media screen and (max-width: 576px) {
+            span {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

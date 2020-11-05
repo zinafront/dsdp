@@ -1,0 +1,395 @@
+body {
+  &.default {
+    font-family: $nregular;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    &:before {
+      background: $white;
+      transition: 0.4s ease all;
+      background-image: url(../img/dashboard-background.jpg);
+      opacity: 0;
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      backgroud-repeat: no-repeat;
+      background-size: cover;
+    }
+    .filter-trigger {
+      color: $black;
+      text-decoration: none;
+      h3 {
+        margin-bottom: 1rem;
+        position: relative;
+        &:after {
+          content:'\f078'; //fas fa-chevron-up
+          font-family: "Font Awesome 5 Free"; 
+          font-weight: 900; 
+          position: absolute;
+          font-size: 1rem;
+          top:5px;
+          right:0;
+        }
+      }
+      &.active {
+        h3 {
+          &:after {
+            content:'\f077'; //fas fa-chevron-down
+          }
+        }
+      }
+    }
+
+    .container-fluid {
+      margin: 0;
+      padding: 0;
+    }
+    .breadcrumb {
+      margin-bottom: 0;
+      padding: .5rem 1rem;
+      font-size: 0.8rem;
+      color: $nk-blue;
+      background: none;
+      border-bottom: 1px solid $gray-borders;
+      a {
+        color: $nk-blue;
+      }
+      #current-home {
+        display: none;
+      }
+    }
+    .breadcrumb-item {
+      &+.breadcrumb-item {
+        &::before {
+          content: '\003e' !important;
+        }
+      }
+    }
+    .tag {
+      font-size: 0.8rem;
+      padding: 0.3em 0.5em;
+      border-radius: 3px;
+      &.tag-high {
+        background: $sim-high;
+        color: $white;
+      }
+      &.tag-medhigh {
+        background: $sim-medhi;
+        color: $white;
+      }
+      &.tag-medlow {
+        background: $sim-medlo;
+        color: $black;
+      }
+      &.tag-low {
+        background: $sim-low;
+        color: $white;
+      }
+    }
+    strong {
+      font-family: $nbold;
+    }
+    .content {
+      .card-group.home {
+        display: flex;
+      }
+    }
+  }
+}
+
+header {
+  nav.navigator {
+    background: $nk-blue;
+    color: white;
+    display: flex;
+    height: 60px;
+    justify-content: space-between;
+    padding: 0 1.5em;
+    a {
+      color: white;
+    }
+    .nav-left {
+      display: flex;
+      align-items: center;
+      .menu-icon {
+        margin-right: 1.5rem;
+      }
+      img {
+        width: 7em;
+        @media screen and (max-width: 576px) {
+          width: 6em;
+        }
+      }
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      .username {
+        font-size: 0.9rem;
+        @media screen and (max-width: 576px) {
+          font-size: 0.75rem;
+        }
+      }
+      .avatar {
+        border-radius: 50%;
+        overflow: hidden;
+        width: 3em;
+        height: 3em;
+        margin-top:10px;
+        margin-left: 20px;
+        @media screen and (max-width: 576px) {
+          display: none;
+        }
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.content {
+  padding: 1.5em;
+  .filters-box, .results-box {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    h3 {
+      font-size: 1.5rem;
+      font-family: $nregular;
+      font-weight: 100;
+      color: $black;
+    }
+  }
+  .filters-box {
+    .filters {
+      background: $gray-contents;
+      border-radius: 5px;
+      border: 1px solid $gray-borders;
+      flex-direction: column;
+      padding: 1em;
+      h6 {
+        margin: 1.2rem 0 1rem;
+      }
+    }
+    .projects {
+      .card-group {
+        @media screen and (max-width:576px) {
+          display:flex;
+          .card {
+            margin: 0 0.3em;
+          }
+        }
+        margin: 1em -0.3em;
+      }
+      h3 {
+        font-size: 1.18rem;
+        margin: 2rem 0 1.5rem;
+      }
+      .card {
+        flex-direction:column;
+        padding: 0.6em 1em;
+        border-radius: 5px;
+        border: 1px solid $gray-borders;
+        flex-basis: 100%;
+        margin: 1em 0 0;
+        &.active {
+          border: none;
+          .card-matches {
+            display: none;
+          }
+        }
+        hgroup {
+          h4 {
+            font-size: 1.2rem;
+            color: $nk-blue;
+            margin-bottom:5px;
+          }
+          h5 {
+            font-size: 0.9rem;
+            color: $black;
+          }
+          @media screen and (max-width: 576px) {
+            h4 {
+              font-size: 1em;
+            }
+            h5 {
+              font-size: 0.75em;
+            }
+          }
+        }
+        .card-matches {
+          color: $nk-blue;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          justify-content: flex-end;
+          font-size: 0.7em;
+          flex-shrink:0;
+          figure {
+            width: 1.4em;
+            margin:0;
+            img {
+              width:100%;
+            }
+          }
+          @media screen and (max-width: 576px) {
+            span {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  .matches-box {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+    .card {
+      position: relative;
+      padding: 0.6em 1em;
+      border-radius: 5px;
+      border: 1px solid $gray-borders;
+      margin: 0 0 1em 0;
+      h4 {
+        font-size: 1.2rem;
+        color: $nk-blue;
+        margin-bottom: 1em;
+      }
+      .card-content {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        .avatar-tag {
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+          margin-right: 2rem;
+          width: 20%;
+          min-width: 145px;
+          .card-avatar {
+            border-radius: 50%;
+            height: 6.25rem;
+            overflow: hidden;
+            width: 6.25rem;
+            img {
+              width: 100%;
+            }
+          }
+        }
+        .card-skills {
+          padding: 0;
+          list-style: none;
+          li {
+            margin: 1em 0;
+            font-size: 0.8em;
+          }
+        }
+      }
+      .details {
+        text-align: right;
+        color: $nk-blue;
+      }
+    }
+  }
+}
+
+#eng-details {
+  .modal-body {
+    padding: 2rem;
+    .card-skills {
+      padding: 0;
+      list-style: none;
+      li {
+        margin: 1em 0;
+        font-size: 0.8em;
+      }
+    }
+    .resource-main {
+      display: flex;
+      justify-content: flex-start;
+      .avatar-tag {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        margin-right:2em;
+        width: 30%;
+        min-width: 120px;
+        .card-avatar {
+          border-radius: 50%;
+          height: 6.25rem;
+          overflow: hidden;
+          width: 6.25rem;
+          margin: 0;
+          img {
+            width: 100%;
+          }
+        }
+        .tag {
+          position: relative;
+          display: inline-flex;
+          margin-top: 10px;
+        }
+      }
+      .name-skills {
+        h4 {
+          font-size: 1.4rem;
+          color: $nk-blue;
+          margin-bottom: 1.2em;
+        }
+      }
+    }
+    .resource-secondary {
+      display: flex;
+      margin: 0 -0.4em;
+      .card {
+        border: 1px solid $gray-borders;
+        margin: 0 0.4em;
+        flex-basis: 0;
+        flex-grow: 1;
+        padding: 0.5em;
+      }
+    }
+    .skills-table {
+      margin-top: 1.5rem;
+      .table {
+        font-size: 0.8em;
+        thead {
+          th {
+            vertical-align:middle;
+          }
+        }
+        tr {
+          td:not(:first-child) {
+            text-align:center;
+          }
+        }
+        i.fas {
+          color: $sim-high;
+        }
+      }
+    }
+  }
+  .close-button {
+    color: $white;
+    cursor: pointer;
+    position: absolute;
+    top: 0px;
+    right: -1em;
+    font-size: 1.5rem;
+    transition: .3s ease all;
+    &:hover {
+      color:$dark-gray;
+      text-decoration: none;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+@font-face {
+	font-family: 'nokia_pure_textregular';
+	src: url('../webfonts/NokiaPureTWeb_Rg.woff') format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'nokia_pure_textbold';
+	src: url('../webfonts/NokiaPureTWeb_Bd.woff') format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+$nregular: 'nokia_pure_textregular', Arial, Helvetica;
+$nbold: 'nokia_pure_textbold', Arial, Helvetica;
