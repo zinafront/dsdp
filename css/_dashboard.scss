@@ -5,17 +5,7 @@ body {
     }
     position: relative;
     .breadcrumb {
-      color: $white;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-      a {
-        color: $white;
-      }
-      #current-results {
-        display: none;
-      }
-      #current-home {
-        display: initial;
-      }
+      display: none;
     }
     header {
       nav {
@@ -48,7 +38,7 @@ body {
 .content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: stretch;
   overflow: auto;
   .filters-big-box {
@@ -56,6 +46,7 @@ body {
     border-radius: 5px;
     border: 1px solid $gray-borders;
     padding: 1em;
+    margin-top: 2rem;
     .filter-trigger {
       color: $black;
       text-decoration: none;
