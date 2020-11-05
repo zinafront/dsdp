@@ -304,14 +304,7 @@ body.dashboard {
   body.dashboard:before {
     opacity: 1; }
   body.dashboard .breadcrumb {
-    color: #ffffff;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
-    body.dashboard .breadcrumb a {
-      color: #ffffff; }
-    body.dashboard .breadcrumb #current-results {
-      display: none; }
-    body.dashboard .breadcrumb #current-home {
-      display: initial; }
+    display: none; }
   body.dashboard header nav.navigator {
     background: none; }
   body.dashboard .content {
@@ -332,14 +325,15 @@ body.dashboard {
 .content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: stretch;
   overflow: auto; }
   .content .filters-big-box {
     background: #f2f2f2;
     border-radius: 5px;
     border: 1px solid #e6e6e6;
-    padding: 1em; }
+    padding: 1em;
+    margin-top: 2rem; }
     .content .filters-big-box .filter-trigger {
       color: #333333;
       text-decoration: none; }
