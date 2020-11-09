@@ -51,16 +51,29 @@ body.default {
     margin: 0;
     padding: 0; }
   body.default .breadcrumb {
+    background: none;
+    border-bottom: 1px solid #e6e6e6;
+    color: #124191;
+    font-size: 0.8rem;
     margin-bottom: 0;
     padding: .5rem 1rem;
-    font-size: 0.8rem;
-    color: #124191;
-    background: none;
-    border-bottom: 1px solid #e6e6e6; }
+    position: relative; }
     body.default .breadcrumb a {
       color: #124191; }
     body.default .breadcrumb #current-home {
       display: none; }
+    body.default .breadcrumb .pwz {
+      background: #d4d4d4;
+      border-radius: 0 0 7px 7px;
+      bottom: -22px;
+      color: white;
+      display: block;
+      font-size: 0.6rem;
+      padding: 0.3em 1em;
+      position: absolute;
+      right: 10px; }
+      body.default .breadcrumb .pwz img {
+        width: 4em; }
   body.default .breadcrumb-item + .breadcrumb-item::before {
     content: '\003e' !important; }
   body.default .tag {
@@ -83,6 +96,8 @@ body.default {
     font-family: "nokia_pure_textbold", Arial, Helvetica; }
   body.default .content .card-group.home {
     display: flex; }
+  body.default .content .filters-big-box .pwz {
+    display: none; }
 
 header nav.navigator {
   background: #124191;
@@ -322,7 +337,20 @@ body.dashboard {
     body.dashboard .content .filters-big-box {
       background: rgba(20, 20, 20, 0.85);
       border: none;
-      color: #ffffff; }
+      color: #ffffff;
+      position: relative; }
+      body.dashboard .content .filters-big-box .pwz {
+        background: rgba(0, 0, 0, 0.85);
+        border-radius: 0 0 7px 7px;
+        bottom: -26px;
+        color: white;
+        display: block;
+        font-size: 0.65rem;
+        padding: 0.5em 1em;
+        position: absolute;
+        right: 10px; }
+        body.dashboard .content .filters-big-box .pwz img {
+          width: 4em; }
     body.dashboard .content .card-group.home {
       display: none; }
     body.dashboard .content .all-projects {
