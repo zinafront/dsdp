@@ -53,17 +53,32 @@ body {
       padding: 0;
     }
     .breadcrumb {
-      margin-bottom: 0;
-      padding: .5rem 1rem;
-      font-size: 0.8rem;
-      color: $nk-blue;
       background: none;
       border-bottom: 1px solid $gray-borders;
+      color: $nk-blue;
+      font-size: 0.8rem;
+      margin-bottom: 0;
+      padding: .5rem 1rem;
+      position: relative;
       a {
         color: $nk-blue;
       }
       #current-home {
         display: none;
+      }
+      .pwz {
+        background: #d4d4d4;
+        border-radius: 0 0 7px 7px;
+        bottom: -22px;
+        color: white;
+        display: block;
+        font-size: 0.6rem;
+        padding: 0.3em 1em;
+        position: absolute;
+        right: 10px;
+        img {
+          width:4em;
+        }
       }
     }
     .breadcrumb-item {
@@ -100,6 +115,11 @@ body {
     .content {
       .card-group.home {
         display: flex;
+      }
+      .filters-big-box {
+        .pwz {
+          display: none;
+        }
       }
     }
   }
